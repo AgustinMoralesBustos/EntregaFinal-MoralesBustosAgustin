@@ -1,0 +1,74 @@
+[
+    {
+        "id": 7801,
+        "img":"/blandysLona1.png",
+        "alt":"Blandys de Lona tamaño 1",
+        "title":"Blandys de Lona 1",
+        "description":"Blandys de Lona tamaño 1",
+        "price":"5450",
+        "categoria":"Blandy"
+    },
+    {
+        "id": 7802,
+        "img":"/blandysLona2.png",
+        "alt":"Blandys de Lona tamaño 2",
+        "title":"Blandys de Lona 2",
+        "description":"Blandys de Lona tamaño 2",
+        "price":"6785",
+        "categoria":"Blandy"
+    },
+    {
+        "id": 7803,
+        "img":"/blandysLona3.png",
+        "alt":"Blandys de Lona tamaño 3",
+        "title":"Blandys de Lona 3",
+        "description":"Blandys de Lona tamaño 3",
+        "price":"7590",
+        "categoria":"Blandy"
+    },
+    {
+        "id": 7804,
+        "img":"/blandysLona4.png",
+        "alt":"Blandys de Lona tamaño 4",
+        "title":"Blandys de Lona 4",
+        "description":"Blandys de Lona tamaño 4",
+        "price":"9270",
+        "categoria":"Blandy"
+    },
+    {
+        "id": 7805,
+        "img":"/blandysLona5.png",
+        "alt":"Blandys de Lona tamaño 5",
+        "title":"Blandys de Lona 5",
+        "description":"Blandys de Lona tamaño 5",
+        "price":"10685",
+        "categoria":"Blandy"
+    },
+    {
+        "id":12408,
+        "img":"/bolsoAvion.png",
+        "alt":"Bolso de Avion",
+        "title":"Bolso de Avion",
+        "description":"Bolso para transportar a tu masconta en avion",
+        "price":"14485",
+        "categoria":"Bolso"
+    },
+    {
+        "id":12401,
+        "img":"/bolsoLonaAbierto1.png",
+        "alt":"Bolso de Lona una apertura",
+        "title":"Bolso de lona abierto (1)",
+        "description":"Bolso de lona con una apertura",
+        "price":"4965",
+        "categoria":"Bolso"
+    },
+    {
+        "id":12402,
+        "img":"/bolsoLonaAbierto2.png",
+        "alt":"Bolso de lona con dos aperturas",
+        "title":"Bolso de lona abierto (2)",
+        "description":"Bolso de lona con dos aperturas",
+        "price":"5725",
+        "categoria":"Bolso"
+    }
+]
