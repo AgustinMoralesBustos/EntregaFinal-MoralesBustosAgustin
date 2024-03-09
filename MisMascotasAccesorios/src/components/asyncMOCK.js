@@ -1,18 +1,14 @@
-// const MOCK_DATA = [
-//     {
-//         id: 7801
-//         img={imagenes.BlandysLona1}
-//         alt="Blandys de Lona tamaño 1"
-//         title="Blandys de Lona 1"
-//         description="Blandys de Lona tamaño 1"
-//         price={5450}
-//     },
-// ]
+import productosJson from '../productos.json';
 
-// export const pediDatos = () => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(MOCK_DATA)
-//         },2000)
-//     })
-// }
+export default function asyncMock(categoryId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (categoryId === undefined) {
+                resolve(productosJson);
+            } else {
+                const productosFiltrados = productosJson.filter(item => item.categoria === categoryId);
+                resolve(productosFiltrados);
+            }
+        }, 2000);
+    });
+}

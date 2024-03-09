@@ -1,40 +1,57 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import productosJson from '../productos.json';
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import ItemDetail from './ItemDetail';
+import ItemCount from './ItemCount';
 
-export default function ItemDetailContainer() {
-    const { itemId } = useParams();
+const ItemDetailContainer = ({ addToCart }) => {
+    const { id } = useParams();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [producto, setProducto] = useState(null);
 
     useEffect(() => {
-        const obtenerProducto = async () => {
-            setTimeout(() => {
-                const productoEncontrado = productosJson.find(item => item.id === parseInt(itemId));
-    
-                if (productoEncontrado) {
-                    setProducto(productoEncontrado);
+        const fetchProducto = async () => {
+            const db = getFirestore();
+            const productoRef = doc(db, "productos", id);
+
+            try {
+                const docSnap = await getDoc(productoRef);
+                if (docSnap.exists()) {
+                    setProducto(docSnap.data());
                 } else {
-                    console.log('Producto no encontrado');
+                    setError(new Error('Producto no encontrado'));
                 }
-            }, 2000);
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoading(false);
+            }
         };
-        
-        obtenerProducto();
+
+        fetchProducto();
     }, [id]);
 
-    if (!producto) return <div>Cargando...</div>;
+    const handleAddToCart = (count) => {
+        for (let i = 0; i < count; i++) {
+            addToCart({ ...producto });
+        }
+    };
+
+    if (loading) {
+        return <div>Cargando producto...</div>;
+    }
+
+    if (error) {
+        return <div>Error al cargar producto: {error.message}</div>;
+    }
 
     return (
-        <main className="item-detail">
-            <h1 style={{ textTransform: 'capitalize' }}>{producto.title}</h1>
-            <section style={{ display: 'flex' }}>
-                <section className="productos-info">
-                    <img src={producto.img} alt={producto.alt} />
-                    <p>Description: {producto.description}</p>
-                    <p>Price: {producto.price}</p>
-                    <p>Category: {producto.categoria}</p>
-                </section>
-            </section>
-        </main>
+        <div>
+            <ItemDetail producto={producto} />
+            <ItemCount stock={10} onAdd={handleAddToCart} />
+        </div>
     );
-}
+};
+
+export default ItemDetailContainer;

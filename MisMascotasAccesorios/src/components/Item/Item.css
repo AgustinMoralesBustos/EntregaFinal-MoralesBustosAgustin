@@ -1,0 +1,58 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.contenedor img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.contenedor h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contenedor p {
+    margin-top: 0.5rem;
+}
+
+.contenedor h3 {
+    margin-top: 0.5rem;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+.titulo {
+    font-size: 24px;
+    padding: 10px 10px 0 10px;
+}
+
+.cuerpo {
+    padding: 10px;
+    flex: 1 1 100%;
+}
+
+.pie {
+    background: #6699ff;
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.pie a {
+    text-decoration: none;
+    color: white;
+}
+
