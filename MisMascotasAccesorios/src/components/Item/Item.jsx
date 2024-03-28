@@ -21,4 +21,3 @@ const Item = ({ producto }) => {
 };
 
 export default Item;
-

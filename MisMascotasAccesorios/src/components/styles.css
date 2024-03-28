@@ -1,0 +1,27 @@
+.photoSize {
+
+  width: 320px;
+  height: 250px;
+  object-fit: cover;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  align-self: center;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  color: rgba(170, 146, 24, 0.573);
+  text-align: center;
+  margin: 20px;
+}
+
+p {
+  color: rgba(0, 0, 0, 0.573);
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+}
